@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: nextra-gateway
+
+# Service endpoints with local fallback defaults.
+# In AWS ECS, these will be replaced by environment variables/SSM parameters.
+services:
+  flight-url: ${FLIGHT_SERVICE_URL:http://localhost:8081}
+  hotel-url: ${HOTEL_SERVICE_URL:http://localhost:8082}
